@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-    public class Class1
+    public class Base
     {
+
     }
 }

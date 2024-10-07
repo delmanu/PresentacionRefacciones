@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Class1
+    public class Marcas
     {
+        //COMMIT DE PRUEBA 1
     }
 }
