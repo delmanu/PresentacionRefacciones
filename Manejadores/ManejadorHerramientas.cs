@@ -10,14 +10,14 @@ using Entidades;
 
 namespace Manejadores
 {
-    internal class ManejadorHerramientas
+    public class ManejadorHerramientas
     {
         Base b = new Base("localhost", "root", "", "taller");
-        public string Guardar(TextBox CodigoHerramienta, TextBox Nombre, TextBox Medida, TextBox fkIdMrca, TextBox Descripcion)
+        public string Guardar(TextBox CodigoHerramienta, TextBox Nombre, TextBox Medida, int IdMarca, TextBox Descripcion)
         {
             try
             {
-                return b.Comando($"INSERT INTO Herramientas VALUES('{CodigoHerramienta.Text}','{Nombre.Text}','{Medida.Text}','{fkIdMrca.Text}','{Descripcion.Text}')");
+                return b.Comando($"INSERT INTO Herramientas VALUES('{CodigoHerramienta.Text}','{Nombre.Text}','{Medida.Text}', {IdMarca}, '{Descripcion.Text}')");
             }
             catch (Exception)
             {
@@ -38,24 +38,25 @@ namespace Manejadores
         {
             Tabla.Columns.Clear();
             Tabla.DataSource = b.Consultar($"SELECT * FROM Herramientas WHERE nombre like '%{filtro}%'", "Herramientas").Tables[0];
-            Tabla.Columns.Insert(4, Boton("Eliminar", Color.Red));
-            Tabla.Columns.Insert(5, Boton("Modificar", Color.Green));
+//            Tabla.Columns.Insert(4, Boton("Eliminar", Color.Red));
+//            Tabla.Columns.Insert(5, Boton("Modificar", Color.Green));
             Tabla.AutoResizeColumns();
             Tabla.AutoResizeRows();
         }
-        public void Borrar(string id, string dato)
+        public string Borrar(string id, string dato)
         {
-            DialogResult rs = MessageBox.Show($"¿Estas seguro de borrar {dato}?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult rs = MessageBox.Show($"¿Estas seguro de borrar: {dato}?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                b.Comando($"DELETE FROM Herramientas WHERE codigoHerramienta = {id}");
-                MessageBox.Show("Registro Eliminado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registro Eliminado", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return b.Comando($"DELETE FROM Herramientas WHERE codigoHerramienta = '{id}'");
             }
+            else
+                return "Se cancelo la opción.";
         }
-        public void Modificar(string id, TextBox CodigoHerramienta, TextBox Nombre, TextBox Medida, TextBox fkIdMrca, TextBox Descripcion)
+        public void Modificar(TextBox codigoHerramienta, TextBox Nombre, TextBox Medida, int IdMarca, TextBox Descripcion)
         {
-            b.Comando($"UPDATE Herramientas SET " + $"codigoHerramienta='{CodigoHerramienta.Text}'," + $"nombre='{Nombre.Text}'," + 
-                $"medida={Medida.Text}'," + $"fkIdMarca={fkIdMrca}'," + $"descripcion={Descripcion.Text}'," + $"WHERE codigoHerramienta={id}");
+            b.Comando($"UPDATE herramientas SET nombre = '{Nombre.Text}', medida = '{Medida.Text}', fkIdMarca = {IdMarca}, descripcion = '{Descripcion.Text}' WHERE codigoHerramienta = '{codigoHerramienta.Text}';\r\n");
             MessageBox.Show("Registro Modificado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

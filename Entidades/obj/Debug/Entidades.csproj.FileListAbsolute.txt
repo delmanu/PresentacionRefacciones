@@ -1,0 +1,14 @@
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\Entidades.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\Entidades.pdb
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\AccesoDatos.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\System.Memory.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\System.Buffers.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\bin\Debug\AccesoDatos.pdb
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.pdb

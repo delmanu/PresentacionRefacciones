@@ -10,7 +10,7 @@ using System.Drawing;
 
 namespace Manejadores
 {
-    internal class ManejadorRefacciones
+    public class ManejadorRefacciones
     {
         Base b = new Base("localhost", "root", "", "taller");
         public string Guardar(TextBox CodigoBarras, TextBox Nombre, TextBox Descripcion, TextBox fkIdMrca)

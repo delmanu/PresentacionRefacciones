@@ -1,0 +1,16 @@
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\Manejadores.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\Manejadores.pdb
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\AccesoDatos.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\Entidades.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\MySql.Data.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\System.Memory.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\System.Buffers.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\AccesoDatos.pdb
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\bin\Debug\Entidades.pdb
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\obj\Debug\Manejadores.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\obj\Debug\Manejadores.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\obj\Debug\Manejadores.csproj.CopyComplete
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\obj\Debug\Manejadores.dll
+C:\Users\carlo\Desktop\ArchivosGIT\PresentacionRefacciones\Manejadores\obj\Debug\Manejadores.pdb
