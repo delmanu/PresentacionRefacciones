@@ -8,7 +8,8 @@ namespace Entidades
 {
     internal class Usuarios
     {
-        public Usuarios(int idUsuario, string nombreUsuario, string apellidoP, string apellidoM, string fechaNacimiento, string rFC, string usuario, string contraseña)
+        public Usuarios(int idUsuario, string nombreUsuario, string apellidoP, string apellidoM, 
+            string fechaNacimiento, string rFC, string usuario, string contraseña)
         {
             IdUsuario = idUsuario;
             NombreUsuario = nombreUsuario;

@@ -49,5 +49,11 @@
     <Compile Include="Refacciones.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{5a4b9f58-c9e1-40ae-8fba-e8784fc42995}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

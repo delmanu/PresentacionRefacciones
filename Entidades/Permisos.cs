@@ -8,7 +8,8 @@ namespace Entidades
 {
     internal class Permisos
     {
-        public Permisos(int iDPermiso, int fkIDFormulario, int fkIDUsuario, int lectura, int escritura, int eliminacion, int actualizacion)
+        public Permisos(int iDPermiso, int fkIDFormulario, int fkIDUsuario, int lectura, 
+            int escritura, int eliminacion, int actualizacion)
         {
             IDPermiso = iDPermiso;
             this.fkIDFormulario = fkIDFormulario;

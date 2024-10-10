@@ -8,7 +8,8 @@ namespace Entidades
 {
     internal class Herramientas
     {
-        public Herramientas(string codigoHerramientas, string nombreHerramienta, string medida, string descripcion, int fkIDMarca)
+        public Herramientas(string codigoHerramientas, string nombreHerramienta, string medida, 
+            string descripcion, int fkIDMarca)
         {
             CodigoHerramientas = codigoHerramientas;
             NombreHerramienta = nombreHerramienta;

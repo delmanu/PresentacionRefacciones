@@ -8,5 +8,13 @@ namespace Entidades
 {
     internal class Formulario
     {
+        public Formulario(int idFormulario, string nombreFormulario)
+        {
+            IdFormulario = idFormulario;
+            NombreFormulario = nombreFormulario;
+        }
+
+        public int IdFormulario { get; set; }
+        public string NombreFormulario { get; set; }
     }
 }
