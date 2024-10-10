@@ -32,7 +32,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
+<<<<<<< HEAD
       <HintPath>..\..\..\Archivos DLL\MySql.Data.dll</HintPath>
+=======
+      <HintPath>..\..\..\..\source\repos\PresentacionMuebles\AccesoDatos\bin\Debug\MySql.Data.dll</HintPath>
+>>>>>>> 8f98ed524a186123c6bb6a71f907e93cb5259a68
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
