@@ -50,8 +50,8 @@
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
-      <Project>{5a4b9f58-c9e1-40ae-8fba-e8784fc42995}</Project>
+    <ProjectReference Include="..\..\source\repos\PresentacionMuebles\AccesoDatos\AccesoDatos.csproj">
+      <Project>{26f2a154-5c6e-4010-8819-f7d5db0d338d}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
   </ItemGroup>
