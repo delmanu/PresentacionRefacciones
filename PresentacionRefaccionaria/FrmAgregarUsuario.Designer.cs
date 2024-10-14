@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarUsuario));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellidoP = new System.Windows.Forms.TextBox();
@@ -44,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.cbElimU = new System.Windows.Forms.CheckBox();
             this.cbModU = new System.Windows.Forms.CheckBox();
             this.cbAgU = new System.Windows.Forms.CheckBox();
@@ -65,7 +67,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.cbCamPassUser = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -224,6 +225,18 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Administrar permisos";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.Font = new System.Drawing.Font("Product Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(531, 254);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 21);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Seleccionar todo";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // cbElimU
             // 
@@ -457,18 +470,6 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label12.Font = new System.Drawing.Font("Product Sans", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(531, 254);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(136, 21);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "Seleccionar todo";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
             // cbCamPassUser
             // 
             this.cbCamPassUser.AutoSize = true;
@@ -504,6 +505,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAgregarUsuario";
             this.Text = "FrmAgregarUsuario";

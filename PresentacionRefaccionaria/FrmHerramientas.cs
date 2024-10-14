@@ -30,6 +30,11 @@ namespace PresentacionRefaccionaria
             btnModificar.Enabled = false;
         }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             mh.Mostrar(dtgvHerramientas, txtBuscar.Text);

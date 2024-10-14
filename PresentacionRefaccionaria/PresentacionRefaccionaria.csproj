@@ -176,5 +176,29 @@
   <ItemGroup>
     <None Include="Resources\bgtaller_Mesa de trabajo 1-03.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shock-absorber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycle-bin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

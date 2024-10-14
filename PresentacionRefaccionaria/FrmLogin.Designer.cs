@@ -40,7 +40,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtUsuario.Location = new System.Drawing.Point(390, 389);
+            this.txtUsuario.Location = new System.Drawing.Point(389, 416);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(500, 32);
             this.txtUsuario.TabIndex = 0;
@@ -49,7 +49,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(602, 424);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.Location = new System.Drawing.Point(601, 451);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 25);
             this.label1.TabIndex = 1;
@@ -59,7 +61,9 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(583, 506);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.Snow;
+            this.label2.Location = new System.Drawing.Point(582, 533);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 3;
@@ -68,7 +72,7 @@
             // txtContraseña
             // 
             this.txtContraseña.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtContraseña.Location = new System.Drawing.Point(390, 471);
+            this.txtContraseña.Location = new System.Drawing.Point(389, 498);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '•';
             this.txtContraseña.Size = new System.Drawing.Size(500, 32);
@@ -77,20 +81,25 @@
             // btnIngresar
             // 
             this.btnIngresar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnIngresar.Location = new System.Drawing.Point(526, 573);
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(114)))), ((int)(((byte)(167)))));
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngresar.Font = new System.Drawing.Font("Product Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.Snow;
+            this.btnIngresar.Location = new System.Drawing.Point(525, 600);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(228, 40);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // lblErrores
             // 
             this.lblErrores.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblErrores.AutoSize = true;
+            this.lblErrores.BackColor = System.Drawing.Color.Transparent;
             this.lblErrores.ForeColor = System.Drawing.Color.Tomato;
-            this.lblErrores.Location = new System.Drawing.Point(586, 627);
+            this.lblErrores.Location = new System.Drawing.Point(585, 654);
             this.lblErrores.Name = "lblErrores";
             this.lblErrores.Size = new System.Drawing.Size(109, 25);
             this.lblErrores.TabIndex = 5;
@@ -128,7 +137,6 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FrmLogin";
             this.Text = "Login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

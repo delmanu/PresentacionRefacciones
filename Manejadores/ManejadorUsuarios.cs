@@ -74,5 +74,13 @@ namespace Manejadores
 
             return int.Parse(dt.Rows[0]["idUsuario"].ToString());
         }
+
+        public string ObtenerNombre(int ID)
+        {
+            DataSet ds = b.Consultar($"SELECT nombre FROM usuarios WHERE idUsuario = {ID}", "usuarios");
+            DataTable dt = ds.Tables[0];
+
+            return dt.Rows[0]["nombre"].ToString();
+        }
     }
 }

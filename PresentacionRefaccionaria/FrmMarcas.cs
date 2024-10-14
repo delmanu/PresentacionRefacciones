@@ -51,6 +51,11 @@ namespace PresentacionRefaccionaria
             mm.Mostrar(dtgvMarcas, txtBuscar.Text);
         }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             mm.Mostrar(dtgvMarcas, txtBuscar.Text);

@@ -17,6 +17,7 @@ namespace PresentacionRefaccionaria
         ManejadorLogin ml; ManejadorPermisos mp; ManejadorUsuarios mu;
         public static bool VlHer = false, VlPro = false, VlMar = false, VlUse = false;
         public static int ID = 0, Herramientas = 1, Refacciones = 2, Marcas = 3, Usuarios = 4;
+        public static string NombreUsuario = "";
         public FrmLogin()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace PresentacionRefaccionaria
                         case "C0rr3ct0":
                         {
                              ID = mu.ConsultarID(txtUsuario);
+                             NombreUsuario = mu.ObtenerNombre(ID);
                              ObtenerPermisos();
                              this.Hide();
                              FrmMenu m = new FrmMenu();

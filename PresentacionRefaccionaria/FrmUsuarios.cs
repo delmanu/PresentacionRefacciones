@@ -14,7 +14,8 @@ namespace PresentacionRefaccionaria
     public partial class FrmUsuarios : Form
     {
         public static int fila, columna, IdUsuario, Herramientas = 1, Productos = 2, Marcas = 3, Usuarios = 4;
-        public static string Nombre, ApellidoP, ApellidoM, RFC, FechaNacimiento, Usuario;     
+        public static string Nombre, ApellidoP, ApellidoM, RFC, FechaNacimiento, Usuario;      
+
         ManejadorUsuarios mu;   
         public FrmUsuarios()
         {
@@ -46,6 +47,11 @@ namespace PresentacionRefaccionaria
             btnAgregar.Enabled = FrmMenu.AddUse;
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

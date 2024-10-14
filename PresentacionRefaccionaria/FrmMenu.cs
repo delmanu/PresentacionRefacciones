@@ -17,6 +17,7 @@ namespace PresentacionRefaccionaria
         public static bool AddHer = false, AddPro = false, AddMar = false, AddUse = false;
         public static bool ModHer = false, ModPro = false, ModMar = false, ModUse = false;
         public static bool ElimHer = false, ElimPro = false, ElimMar = false, ElimUse = false;
+              
         public FrmMenu()
         {
             InitializeComponent();
@@ -70,6 +71,12 @@ namespace PresentacionRefaccionaria
             tsbRefacciones.Enabled = FrmLogin.VlPro;
             tsbMarcas.Enabled = FrmLogin.VlMar;
             tsbUsuarios.Enabled = FrmLogin.VlUse;
+            lblNombre.Text = FrmLogin.NombreUsuario;
+        }
+
+        private void bntCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
