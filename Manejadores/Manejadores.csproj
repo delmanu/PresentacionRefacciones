@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManejadorHerramientas.cs" />
+    <Compile Include="ManejadorLogin.cs" />
     <Compile Include="ManejadorMarcas.cs" />
     <Compile Include="ManejadorPermisos.cs" />
     <Compile Include="ManejadorRefacciones.cs" />
@@ -51,8 +52,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\source\repos\PresentacionMuebles\AccesoDatos\AccesoDatos.csproj">
-      <Project>{26f2a154-5c6e-4010-8819-f7d5db0d338d}</Project>
+    <ProjectReference Include="..\..\..\Archivos\GIT\PracticaNo9\PresentacionTienda\AccesoDatos\AccesoDatos.csproj">
+      <Project>{102ebd7d-b898-467c-b949-bbc4badd75d6}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

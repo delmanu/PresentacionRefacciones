@@ -1843,6 +1843,40 @@
         <member name="M:Google.Protobuf.Compiler.CodeGeneratorResponse.ClearSupportedFeatures">
             <summary>Clears the value of the "supported_features" field</summary>
         </member>
+        <member name="F:Google.Protobuf.Compiler.CodeGeneratorResponse.MinimumEditionFieldNumber">
+            <summary>Field number for the "minimum_edition" field.</summary>
+        </member>
+        <member name="P:Google.Protobuf.Compiler.CodeGeneratorResponse.MinimumEdition">
+            <summary>
+            The minimum edition this plugin supports.  This will be treated as an
+            Edition enum, but we want to allow unknown values.  It should be specified
+            according the edition enum value, *not* the edition number.  Only takes
+            effect for plugins that have FEATURE_SUPPORTS_EDITIONS set.
+            </summary>
+        </member>
+        <member name="P:Google.Protobuf.Compiler.CodeGeneratorResponse.HasMinimumEdition">
+            <summary>Gets whether the "minimum_edition" field is set</summary>
+        </member>
+        <member name="M:Google.Protobuf.Compiler.CodeGeneratorResponse.ClearMinimumEdition">
+            <summary>Clears the value of the "minimum_edition" field</summary>
+        </member>
+        <member name="F:Google.Protobuf.Compiler.CodeGeneratorResponse.MaximumEditionFieldNumber">
+            <summary>Field number for the "maximum_edition" field.</summary>
+        </member>
+        <member name="P:Google.Protobuf.Compiler.CodeGeneratorResponse.MaximumEdition">
+            <summary>
+            The maximum edition this plugin supports.  This will be treated as an
+            Edition enum, but we want to allow unknown values.  It should be specified
+            according the edition enum value, *not* the edition number.  Only takes
+            effect for plugins that have FEATURE_SUPPORTS_EDITIONS set.
+            </summary>
+        </member>
+        <member name="P:Google.Protobuf.Compiler.CodeGeneratorResponse.HasMaximumEdition">
+            <summary>Gets whether the "maximum_edition" field is set</summary>
+        </member>
+        <member name="M:Google.Protobuf.Compiler.CodeGeneratorResponse.ClearMaximumEdition">
+            <summary>Clears the value of the "maximum_edition" field</summary>
+        </member>
         <member name="F:Google.Protobuf.Compiler.CodeGeneratorResponse.FileFieldNumber">
             <summary>Field number for the "file" field.</summary>
         </member>
@@ -2872,8 +2906,8 @@
             Formats the specified message as JSON.
             </summary>
             <param name="message">The message to format.</param>
-            <remarks>This method delegates to <c>Format(IMessage, int)</c> with <c>indentationLevel = 0</c>.</remarks>
-            <returns>The formatted message.</returns>
+            <remarks>This method delegates to <c>Format(IMessage, int)</c> with <c>indentationLevel =
+            0</c>.</remarks> <returns>The formatted message.</returns>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.Int32)">
             <summary>
@@ -2881,9 +2915,8 @@
             </summary>
             <param name="message">The message to format.</param>
             <param name="indentationLevel">Indentation level to start at.</param>
-            <remarks>To keep consistent indentation when embedding a message inside another JSON string, set <paramref name="indentationLevel"/>. E.g:
-            <code>
-            var response = $@"{{
+            <remarks>To keep consistent indentation when embedding a message inside another JSON string,
+            set <paramref name="indentationLevel"/>. E.g: <code> var response = $@"{{
               ""data"": { Format(message, indentationLevel: 1) }
             }}"</code>
             </remarks>
@@ -2895,17 +2928,19 @@
             </summary>
             <param name="message">The message to format.</param>
             <param name="writer">The TextWriter to write the formatted message to.</param>
-            <remarks>This method delegates to <c>Format(IMessage, TextWriter, int)</c> with <c>indentationLevel = 0</c>.</remarks>
-            <returns>The formatted message.</returns>
+            <remarks>This method delegates to <c>Format(IMessage, TextWriter, int)</c> with
+            <c>indentationLevel = 0</c>.</remarks> <returns>The formatted message.</returns>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter,System.Int32)">
             <summary>
-            Formats the specified message as JSON. When <see cref="P:Google.Protobuf.JsonFormatter.Settings.Indentation"/> is not null, start indenting at the specified <paramref name="indentationLevel"/>.
+            Formats the specified message as JSON. When <see cref="P:Google.Protobuf.JsonFormatter.Settings.Indentation"/> is not null,
+            start indenting at the specified <paramref name="indentationLevel"/>.
             </summary>
             <param name="message">The message to format.</param>
             <param name="writer">The TextWriter to write the formatted message to.</param>
             <param name="indentationLevel">Indentation level to start at.</param>
-            <remarks>To keep consistent indentation when embedding a message inside another JSON string, set <paramref name="indentationLevel"/>.</remarks>
+            <remarks>To keep consistent indentation when embedding a message inside another JSON string,
+            set <paramref name="indentationLevel"/>.</remarks>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)">
             <summary>
@@ -2941,7 +2976,8 @@
             </summary>
             <param name="writer">The writer to write the value to. Must not be null.</param>
             <param name="value">The value to write. May be null.</param>
-            <remarks>Delegates to <c>WriteValue(TextWriter, object, int)</c> with <c>indentationLevel = 0</c>.</remarks>
+            <remarks>Delegates to <c>WriteValue(TextWriter, object, int)</c> with <c>indentationLevel =
+            0</c>.</remarks>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.WriteValue(System.IO.TextWriter,System.Object,System.Int32)">
             <summary>
@@ -2952,7 +2988,8 @@
             </summary>
             <param name="writer">The writer to write the value to. Must not be null.</param>
             <param name="value">The value to write. May be null.</param>
-            <param name="indentationLevel">The current indentationLevel. Not used when <see cref="P:Google.Protobuf.JsonFormatter.Settings.Indentation"/> is null.</param>
+            <param name="indentationLevel">The current indentationLevel. Not used when <see
+            cref="P:Google.Protobuf.JsonFormatter.Settings.Indentation"/> is null.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.WriteWellKnownTypeValue(System.IO.TextWriter,Google.Protobuf.Reflection.MessageDescriptor,System.Object,System.Int32)">
             <summary>
@@ -2964,10 +3001,12 @@
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.WriteString(System.IO.TextWriter,System.String)">
             <summary>
-            Writes a string (including leading and trailing double quotes) to a builder, escaping as required.
+            Writes a string (including leading and trailing double quotes) to a builder, escaping as
+            required.
             </summary>
             <remarks>
-            Other than surrogate pair handling, this code is mostly taken from src/google/protobuf/util/internal/json_escaping.cc.
+            Other than surrogate pair handling, this code is mostly taken from
+            src/google/protobuf/util/internal/json_escaping.cc.
             </remarks>
         </member>
         <member name="T:Google.Protobuf.JsonFormatter.Settings">
@@ -3000,7 +3039,8 @@
         </member>
         <member name="P:Google.Protobuf.JsonFormatter.Settings.PreserveProtoFieldNames">
             <summary>
-            Whether to use the original proto field names as defined in the .proto file. Defaults to false.
+            Whether to use the original proto field names as defined in the .proto file. Defaults to
+            false.
             </summary>
         </member>
         <member name="P:Google.Protobuf.JsonFormatter.Settings.Indentation">
@@ -3010,62 +3050,80 @@
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.#ctor(System.Boolean)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified formatting of default values
-            and an empty type registry.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified formatting of default
+            values and an empty type registry.
             </summary>
-            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc) should be formatted; <c>false</c> otherwise.</param>
+            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc)
+            should be formatted; <c>false</c> otherwise.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.#ctor(System.Boolean,Google.Protobuf.Reflection.TypeRegistry)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified formatting of default values
-            and type registry.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified formatting of default
+            values and type registry.
             </summary>
-            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc) should be formatted; <c>false</c> otherwise.</param>
-            <param name="typeRegistry">The <see cref="P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry"/> to use when formatting <see cref="T:Google.Protobuf.WellKnownTypes.Any"/> messages.</param>
+            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc)
+            should be formatted; <c>false</c> otherwise.</param> <param name="typeRegistry">The <see
+            cref="P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry"/> to use when formatting <see cref="T:Google.Protobuf.WellKnownTypes.Any"/> messages.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.#ctor(System.Boolean,Google.Protobuf.Reflection.TypeRegistry,System.Boolean,System.Boolean,System.String)">
             <summary>
             Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified parameters.
             </summary>
-            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc) should be formatted; <c>false</c> otherwise.</param>
-            <param name="typeRegistry">The <see cref="P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry"/> to use when formatting <see cref="T:Google.Protobuf.WellKnownTypes.Any"/> messages. TypeRegistry.Empty will be used if it is null.</param>
-            <param name="formatEnumsAsIntegers"><c>true</c> to format the enums as integers; <c>false</c> to format enums as enum names.</param>
-            <param name="preserveProtoFieldNames"><c>true</c> to preserve proto field names; <c>false</c> to convert them to lowerCamelCase.</param>
-            <param name="indentation">The indentation string to use for multi-line formatting. <c>null</c> to disable multi-line format.</param>
+            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc)
+            should be formatted; <c>false</c> otherwise.</param> <param name="typeRegistry">The <see
+            cref="P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry"/> to use when formatting <see cref="T:Google.Protobuf.WellKnownTypes.Any"/> messages.
+            TypeRegistry.Empty will be used if it is null.</param> <param
+            name="formatEnumsAsIntegers"><c>true</c> to format the enums as integers; <c>false</c> to
+            format enums as enum names.</param> <param name="preserveProtoFieldNames"><c>true</c> to
+            preserve proto field names; <c>false</c> to convert them to lowerCamelCase.</param> <param
+            name="indentation">The indentation string to use for multi-line formatting. <c>null</c> to
+            disable multi-line format.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues(System.Boolean)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified formatting of default values and the current settings.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified formatting of default
+            values and the current settings.
             </summary>
-            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc) should be formatted; <c>false</c> otherwise.</param>
+            <param name="formatDefaultValues"><c>true</c> if default values (0, empty strings etc)
+            should be formatted; <c>false</c> otherwise.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry(Google.Protobuf.Reflection.TypeRegistry)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified type registry and the current settings.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified type registry and the
+            current settings.
             </summary>
-            <param name="typeRegistry">The <see cref="P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry"/> to use when formatting <see cref="T:Google.Protobuf.WellKnownTypes.Any"/> messages.</param>
+            <param name="typeRegistry">The <see cref="P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry"/> to use when formatting <see
+            cref="T:Google.Protobuf.WellKnownTypes.Any"/> messages.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers(System.Boolean)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified enums formatting option and the current settings.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified enums formatting option and
+            the current settings.
             </summary>
-            <param name="formatEnumsAsIntegers"><c>true</c> to format the enums as integers; <c>false</c> to format enums as enum names.</param>
+            <param name="formatEnumsAsIntegers"><c>true</c> to format the enums as integers;
+            <c>false</c> to format enums as enum names.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.WithPreserveProtoFieldNames(System.Boolean)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified field name formatting option and the current settings.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified field name formatting
+            option and the current settings.
             </summary>
-            <param name="preserveProtoFieldNames"><c>true</c> to preserve proto field names; <c>false</c> to convert them to lowerCamelCase.</param>
+            <param name="preserveProtoFieldNames"><c>true</c> to preserve proto field names;
+            <c>false</c> to convert them to lowerCamelCase.</param>
         </member>
         <member name="M:Google.Protobuf.JsonFormatter.Settings.WithIndentation(System.String)">
             <summary>
-            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified indentation and the current settings.
+            Creates a new <see cref="T:Google.Protobuf.JsonFormatter.Settings"/> object with the specified indentation and the current
+            settings.
             </summary>
-            <param name="indentation">The string to output for each level of indentation (nesting). The default is two spaces per level. Use null to disable indentation entirely.</param>
-            <remarks>A non-null value for <see cref="P:Google.Protobuf.JsonFormatter.Settings.Indentation"/> will insert additional line-breaks to the JSON output.
-            Each line will contain either a single value, or braces. The default line-break is determined by <see cref="P:System.Environment.NewLine"/>,
-            which is <c>"\n"</c> on Unix platforms, and <c>"\r\n"</c> on Windows. If <see cref="T:Google.Protobuf.JsonFormatter"/> seems to produce empty lines,
-            you need to pass a <see cref="T:System.IO.TextWriter"/> that uses a <c>"\n"</c> newline. See <see cref="M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)"/>.
+            <param name="indentation">The string to output for each level of indentation (nesting).
+            The default is two spaces per level. Use null to disable indentation entirely.</param>
+            <remarks>A non-null value for <see cref="P:Google.Protobuf.JsonFormatter.Settings.Indentation"/> will insert additional line-breaks
+            to the JSON output. Each line will contain either a single value, or braces. The default
+            line-break is determined by <see cref="P:System.Environment.NewLine"/>, which is <c>"\n"</c> on
+            Unix platforms, and <c>"\r\n"</c> on Windows. If <see cref="T:Google.Protobuf.JsonFormatter"/> seems to
+            produce empty lines, you need to pass a <see cref="T:System.IO.TextWriter"/> that uses a <c>"\n"</c>
+            newline. See <see cref="M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)"/>.
             </remarks>
         </member>
         <member name="T:Google.Protobuf.JsonParser">
@@ -4416,6 +4474,13 @@
             used or relyed on outside of tests.
             </summary>
         </member>
+        <member name="F:Google.Protobuf.Reflection.Edition.Max">
+            <summary>
+            Placeholder for specifying unbounded edition support.  This should only
+            ever be used by plugins that can expect to never require any changes to
+            support a new edition.
+            </summary>
+        </member>
         <member name="T:Google.Protobuf.Reflection.FileDescriptorSet">
             <summary>
             The protocol compiler can output a FileDescriptorSet containing the .proto
@@ -4932,12 +4997,12 @@
              If true, this is a proto3 "optional". When a proto3 field is optional, it
              tracks presence regardless of field type.
             
-             When proto3_optional is true, this field must be belong to a oneof to
-             signal to old proto3 clients that presence is tracked for this field. This
-             oneof is known as a "synthetic" oneof, and this field must be its sole
-             member (each proto3 optional field gets its own synthetic oneof). Synthetic
-             oneofs exist in the descriptor only, and do not generate any API. Synthetic
-             oneofs must be ordered after all "real" oneofs.
+             When proto3_optional is true, this field must belong to a oneof to signal
+             to old proto3 clients that presence is tracked for this field. This oneof
+             is known as a "synthetic" oneof, and this field must be its sole member
+             (each proto3 optional field gets its own synthetic oneof). Synthetic oneofs
+             exist in the descriptor only, and do not generate any API. Synthetic oneofs
+             must be ordered after all "real" oneofs.
             
              For message fields, proto3_optional doesn't create any semantic change,
              since non-repeated message fields always track presence. However it still
@@ -5387,15 +5452,6 @@
         <member name="M:Google.Protobuf.Reflection.FileOptions.ClearPyGenericServices">
             <summary>Clears the value of the "py_generic_services" field</summary>
         </member>
-        <member name="F:Google.Protobuf.Reflection.FileOptions.PhpGenericServicesFieldNumber">
-            <summary>Field number for the "php_generic_services" field.</summary>
-        </member>
-        <member name="P:Google.Protobuf.Reflection.FileOptions.HasPhpGenericServices">
-            <summary>Gets whether the "php_generic_services" field is set</summary>
-        </member>
-        <member name="M:Google.Protobuf.Reflection.FileOptions.ClearPhpGenericServices">
-            <summary>Clears the value of the "php_generic_services" field</summary>
-        </member>
         <member name="F:Google.Protobuf.Reflection.FileOptions.DeprecatedFieldNumber">
             <summary>Field number for the "deprecated" field.</summary>
         </member>
@@ -5646,10 +5702,6 @@
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.MapEntry">
              <summary>
-             NOTE: Do not set the option in .proto files. Always use the maps syntax
-             instead. The option should only be implicitly set by the proto compiler
-             parser.
-            
              Whether the message is an automatically generated map entry type for the
              maps field.
             
@@ -5667,6 +5719,10 @@
              use a native map in the target language to hold the keys and values.
              The reflection APIs in such implementations still need to work as
              if the field is a repeated message field.
+            
+             NOTE: Do not set the option in .proto files. Always use the maps syntax
+             instead. The option should only be implicitly set by the proto compiler
+             parser.
              </summary>
         </member>
         <member name="P:Google.Protobuf.Reflection.MessageOptions.HasMapEntry">
@@ -5799,19 +5855,11 @@
              call from multiple threads concurrently, while non-const methods continue
              to require exclusive access.
             
-             Note that implementations may choose not to check required fields within
-             a lazy sub-message.  That is, calling IsInitialized() on the outer message
-             may return true even if the inner message has missing required fields.
-             This is necessary because otherwise the inner message would have to be
-             parsed in order to perform the check, defeating the purpose of lazy
-             parsing.  An implementation which chooses not to check required fields
-             must be consistent about it.  That is, for any particular sub-message, the
-             implementation must either *always* check its required fields, or *never*
-             check its required fields, regardless of whether or not the message has
-             been parsed.
-            
-             As of May 2022, lazy verifies the contents of the byte stream during
-             parsing.  An invalid byte stream will cause the overall parsing to fail.
+             Note that lazy message fields are still eagerly verified to check
+             ill-formed wireformat or missing required fields. Calling IsInitialized()
+             on the outer message would fail if the inner message has missing required
+             fields. Failed verification would result in parsing failure (except when
+             uninitialized messages are acceptable).
              </summary>
         </member>
         <member name="P:Google.Protobuf.Reflection.FieldOptions.HasLazy">
@@ -6513,7 +6561,7 @@
              location.
             
              Each element is a field number or an index.  They form a path from
-             the root FileDescriptorProto to the place where the definition occurs.
+             the root FileDescriptorProto to the place where the definition appears.
              For example, this path:
                [ 4, 3, 2, 7, 1 ]
              refers to:
@@ -8147,47 +8195,49 @@
             Creates a delegate which will cast the argument to the type that declares the method,
             call the method on it, then convert the result to object.
             </summary>
-            <param name="method">The method to create a delegate for, which must be declared in an IMessage
-            implementation.</param>
+            <param name="method">The method to create a delegate for, which must be declared in an
+            IMessage implementation.</param>
         </member>
         <member name="M:Google.Protobuf.Reflection.ReflectionUtil.CreateFuncIMessageInt32(System.Reflection.MethodInfo)">
             <summary>
             Creates a delegate which will cast the argument to the type that declares the method,
             call the method on it, then convert the result to the specified type. The method is expected
-            to actually return an enum (because of where we're calling it - for oneof cases). Sometimes that
-            means we need some extra work to perform conversions.
+            to actually return an enum (because of where we're calling it - for oneof cases). Sometimes
+            that means we need some extra work to perform conversions.
             </summary>
-            <param name="method">The method to create a delegate for, which must be declared in an IMessage
-            implementation.</param>
+            <param name="method">The method to create a delegate for, which must be declared in an
+            IMessage implementation.</param>
         </member>
         <member name="M:Google.Protobuf.Reflection.ReflectionUtil.CreateActionIMessageObject(System.Reflection.MethodInfo)">
             <summary>
             Creates a delegate which will execute the given method after casting the first argument to
-            the type that declares the method, and the second argument to the first parameter type of the method.
+            the type that declares the method, and the second argument to the first parameter type of
+            the method.
             </summary>
-            <param name="method">The method to create a delegate for, which must be declared in an IMessage
-            implementation.</param>
+            <param name="method">The method to create a delegate for, which must be declared in an
+            IMessage implementation.</param>
         </member>
         <member name="M:Google.Protobuf.Reflection.ReflectionUtil.CreateActionIMessage(System.Reflection.MethodInfo)">
             <summary>
             Creates a delegate which will execute the given method after casting the first argument to
             type that declares the method.
             </summary>
-            <param name="method">The method to create a delegate for, which must be declared in an IMessage
-            implementation.</param>
+            <param name="method">The method to create a delegate for, which must be declared in an
+            IMessage implementation.</param>
         </member>
         <member name="M:Google.Protobuf.Reflection.ReflectionUtil.CreateExtensionHelper(Google.Protobuf.Extension)">
             <summary>
             Creates a delegate which will execute the given method after casting the first argument to
-            the type that declares the method, and the second argument to the first parameter type of the method.
+            the type that declares the method, and the second argument to the first parameter type of
+            the method.
             </summary>
         </member>
         <member name="M:Google.Protobuf.Reflection.ReflectionUtil.GetReflectionHelper(System.Type,System.Type)">
             <summary>
-            Creates a reflection helper for the given type arguments. Currently these are created on demand
-            rather than cached; this will be "busy" when initially loading a message's descriptor, but after that
-            they can be garbage collected. We could cache them by type if that proves to be important, but creating
-            an object is pretty cheap.
+            Creates a reflection helper for the given type arguments. Currently these are created on
+            demand rather than cached; this will be "busy" when initially loading a message's
+            descriptor, but after that they can be garbage collected. We could cache them by type if
+            that proves to be important, but creating an object is pretty cheap.
             </summary>
         </member>
         <member name="T:Google.Protobuf.Reflection.RepeatedFieldAccessor">

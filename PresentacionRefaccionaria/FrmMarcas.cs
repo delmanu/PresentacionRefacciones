@@ -25,6 +25,9 @@ namespace PresentacionRefaccionaria
         private void FrmMarcas_Load(object sender, EventArgs e)
         {
             mm.Mostrar(dtgvMarcas, txtBuscar.Text);
+            btnAgregar.Enabled = FrmMenu.AddMar;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -65,7 +68,10 @@ namespace PresentacionRefaccionaria
             fila = e.RowIndex; columna = e.ColumnIndex;
             if (columna >= 0 && fila > -1)
             {
-                btnEliminar.Enabled = true; btnModificar.Enabled = true;
+                if (FrmMenu.ElimMar)
+                    btnEliminar.Enabled = true;
+                if (FrmMenu.ModMar)
+                    btnModificar.Enabled = true;
             }
             else
             {

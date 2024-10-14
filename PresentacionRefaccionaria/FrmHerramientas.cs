@@ -25,7 +25,9 @@ namespace PresentacionRefaccionaria
         private void FrmHerramientas_Load(object sender, EventArgs e)
         {
             mh.Mostrar(dtgvHerramientas, txtBuscar.Text);
-
+            btnAgregar.Enabled = FrmMenu.AddHer;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -46,9 +48,13 @@ namespace PresentacionRefaccionaria
         private void dtgvHerramientas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex; columna = e.ColumnIndex;
+            
             if (columna >= 0 && fila > -1)
             {
-                btnEliminar.Enabled = true; btnModificar.Enabled = true;
+                if (FrmMenu.ElimHer)
+                    btnEliminar.Enabled = true; 
+                if (FrmMenu.ModHer)
+                    btnModificar.Enabled = true;
             }
             else
             {

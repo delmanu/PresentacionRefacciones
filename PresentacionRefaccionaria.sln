@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manejadores", "Manejadores\Manejadores.csproj", "{2E456C12-27DA-4D37-AE4E-4439BFFAE0AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "..\source\repos\PresentacionMuebles\AccesoDatos\AccesoDatos.csproj", "{26F2A154-5C6E-4010-8819-F7D5DB0D338D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "..\..\Archivos\GIT\PracticaNo9\PresentacionTienda\AccesoDatos\AccesoDatos.csproj", "{102EBD7D-B898-467C-B949-BBC4BADD75D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{2E456C12-27DA-4D37-AE4E-4439BFFAE0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E456C12-27DA-4D37-AE4E-4439BFFAE0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E456C12-27DA-4D37-AE4E-4439BFFAE0AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26F2A154-5C6E-4010-8819-F7D5DB0D338D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26F2A154-5C6E-4010-8819-F7D5DB0D338D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26F2A154-5C6E-4010-8819-F7D5DB0D338D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26F2A154-5C6E-4010-8819-F7D5DB0D338D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{102EBD7D-B898-467C-B949-BBC4BADD75D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102EBD7D-B898-467C-B949-BBC4BADD75D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102EBD7D-B898-467C-B949-BBC4BADD75D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102EBD7D-B898-467C-B949-BBC4BADD75D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -48,3 +48,9 @@ C:\Users\cd042\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.Core
 C:\Users\cd042\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\cd042\PresentacionRefacciones\Entidades\obj\Debug\Entidades.dll
 C:\Users\cd042\PresentacionRefacciones\Entidades\obj\Debug\Entidades.pdb
+C:\Users\carlo\Desktop\ProyectosGIT\PresentacionRefacciones\Entidades\bin\Debug\Entidades.dll
+C:\Users\carlo\Desktop\ProyectosGIT\PresentacionRefacciones\Entidades\bin\Debug\Entidades.pdb
+C:\Users\carlo\Desktop\ProyectosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\carlo\Desktop\ProyectosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\carlo\Desktop\ProyectosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.dll
+C:\Users\carlo\Desktop\ProyectosGIT\PresentacionRefacciones\Entidades\obj\Debug\Entidades.pdb

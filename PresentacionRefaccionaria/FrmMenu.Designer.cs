@@ -116,6 +116,7 @@
             this.tsbUsuarios.Size = new System.Drawing.Size(64, 64);
             this.tsbUsuarios.Text = "toolStripButton2";
             this.tsbUsuarios.ToolTipText = "Cuentas";
+            this.tsbUsuarios.Click += new System.EventHandler(this.tsbUsuarios_Click);
             // 
             // FrmMenu
             // 
@@ -129,6 +130,7 @@
             this.Name = "FrmMenu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

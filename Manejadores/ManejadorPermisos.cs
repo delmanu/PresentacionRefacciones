@@ -10,14 +10,17 @@ using System.Threading.Tasks;
 using AccesoDatos;
 using Entidades;
 using System.Windows.Forms;
+using System.Runtime.Hosting;
 
 namespace Manejadores
 {
     public class ManejadorPermisos
     {
         Base b = new Base("localhost", "root", "", "taller");
-        public bool ConsultarLectura(string id) {
-            DataSet Lec = b.Consultar($"SELECT Lectura FROM Permisos WHERE id = '%{id}%'", "Permisos");
+        
+        public bool ConsultarLectura(int idUsuario, int idFormulario) 
+        {
+            DataSet Lec = b.Consultar($"SELECT Lectura FROM Permisos WHERE fkIdUsuario = {idUsuario} AND fkIdFormulario = {idFormulario}", "Permisos");
             if (Lec == null || Lec.Tables["Permisos"].Rows.Count == 0)
                 {
                     return false;
@@ -31,9 +34,10 @@ namespace Manejadores
                 return false;
             }
         }
-        public bool ConsultarEscritura(string id)
+        
+        public bool ConsultarEscritura(int idUsuario, int idFormulario)
         {
-            DataSet Esc = b.Consultar($"SELECT Escritura FROM Permisos WHERE id = '%{id}%'", "Permisos");
+            DataSet Esc = b.Consultar($"SELECT Escritura FROM Permisos WHERE fkIdUsuario = {idUsuario} AND fkIdFormulario = {idFormulario}", "Permisos");
             if (Esc == null || Esc.Tables["Permisos"].Rows.Count == 0)
             {
                 return false;
@@ -48,9 +52,10 @@ namespace Manejadores
                 return false;
             }
         }
-        public bool ConsultarEliminacion(string id)
+        
+        public bool ConsultarEliminacion(int idUsuario, int idFormulario)
         {
-            DataSet Del = b.Consultar($"SELECT Eliminacion FROM Permisos WHERE id = '%{id}%'", "Permisos");
+            DataSet Del = b.Consultar($"SELECT Eliminacion FROM Permisos WHERE fkIdUsuario = {idUsuario} AND fkIdFormulario = {idFormulario}", "Permisos");
             if (Del == null || Del.Tables["Permisos"].Rows.Count == 0)
             {
                 return false;
@@ -65,9 +70,10 @@ namespace Manejadores
                 return false;
             }
         }
-        public bool ConsultarModificacion(string id)
+        
+        public bool ConsultarModificacion(int idUsuario, int idFormulario)
         {
-            DataSet Mod = b.Consultar($"SELECT Actualizacion FROM Permisos WHERE id = '%{id}%'", "Permisos");
+            DataSet Mod = b.Consultar($"SELECT Actualizacion FROM Permisos WHERE fkIdUsuario = {idUsuario} AND fkIdFormulario = {idFormulario}", "Permisos");
             if (Mod == null || Mod.Tables["Permisos"].Rows.Count == 0)
             {
                 return false;
@@ -83,31 +89,43 @@ namespace Manejadores
             }
         }
 
-        public void AsignarPermisos(string idu, string idf, RadioButton Todos, RadioButton Lectura, RadioButton Escritura, RadioButton Eliminacion, RadioButton Actualizacion, RadioButton Ninguno)
+        public void ActualizarPermisos(int idu, int idf, CheckBox Lectura, CheckBox Escritura, CheckBox Eliminacion, CheckBox Actualizacion)
         {
-            if (Todos.Checked) {
-                b.Comando($"UPDATE Permisos SET Lectura = 1, Escritura = 1, Eliminacion = 1, Actualizacion = 1 WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
-            }
-            else if (Lectura.Checked)
-            {
-                b.Comando($"UPDATE Permisos SET Lectura = 1, Escritura = 0, Eliminacion = 0, Actualizacion = 0 WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
-            }
-            else if (Escritura.Checked)
-            {
-                b.Comando($"UPDATE Permisos SET Lectura = 0, Escritura = 1, Eliminacion = 0, Actualizacion = 0 WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
-            }
-            else if (Eliminacion.Checked)
-            {
-                b.Comando($"UPDATE Permisos SET Lectura = 0, Escritura = 0, Eliminacion = 1, Actualizacion = 0 WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
-            }
-            else if (Actualizacion.Checked)
-            {
-                b.Comando($"UPDATE Permisos SET Lectura = 0, Escritura = 0, Eliminacion = 0, Actualizacion = 1 WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
-            }
-            else if (Ninguno.Checked)
-            {
-                b.Comando($"UPDATE Permisos SET Lectura = 0, Escritura = 0, Eliminacion = 0, Actualizacion = 0 WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
-            }
+            int lectura = 0, escritura = 0, eliminacion = 0, actualizacion = 0;
+
+            if (Lectura.Checked)
+                lectura = 1;
+
+            if (Escritura.Checked)
+                escritura = 1;
+
+            if (Eliminacion.Checked)
+                eliminacion = 1;
+
+            if (Actualizacion.Checked)
+                actualizacion = 1;
+                        
+            b.Comando($"UPDATE Permisos SET Lectura = {lectura}, Escritura = {escritura}, Eliminacion = {eliminacion}, Actualizacion = {actualizacion} WHERE fkiDUsuario = {idu} AND fkiDFormulario = {idf}");
+            
+        }
+
+        public void AsignarPermisos(int idu, int idf, CheckBox Lectura, CheckBox Escritura, CheckBox Eliminacion, CheckBox Actualizacion)
+        {
+            int lectura = 0, escritura = 0, eliminacion = 0, actualizacion = 0;
+
+            if (Lectura.Checked)
+                lectura = 1;
+
+            if (Escritura.Checked)
+                escritura = 1;
+
+            if (Eliminacion.Checked)
+                eliminacion = 1;
+
+            if (Actualizacion.Checked)
+                actualizacion = 1;
+
+            b.Comando($"INSERT INTO permisos (fkIdFormulario, fkIdUsuario, Lectura, Escritura, Eliminacion, Actualizacion) VALUES ({idf}, {idu}, {lectura}, {escritura}, {eliminacion}, {actualizacion});");
         }
     }
 }

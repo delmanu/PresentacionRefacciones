@@ -13,17 +13,43 @@ namespace Manejadores
     public class ManejadorRefacciones
     {
         Base b = new Base("localhost", "root", "", "taller");
-        public string Guardar(TextBox CodigoBarras, TextBox Nombre, TextBox Descripcion, TextBox fkIdMrca)
+        public string Guardar(TextBox CodigoBarras, TextBox Nombre, TextBox Descripcion, int IdMarca)
         {
             try
             {
-                return b.Comando($"INSERT INTO Refacciones VALUES('{CodigoBarras.Text}','{Nombre.Text}','{Descripcion.Text}','{fkIdMrca.Text}')");
+                return b.Comando($"INSERT INTO Refacciones VALUES('{CodigoBarras.Text}','{Nombre.Text}','{Descripcion.Text}',{IdMarca})");
             }
             catch (Exception)
             {
                 return "Error de Valor";
             }
         }
+        
+        public void Mostrar(DataGridView Tabla, string filtro)
+        {
+            Tabla.Columns.Clear();
+            Tabla.DataSource = b.Consultar($"SELECT r.codigoBarras, r.nombre, m.idMarca, m.nombre AS 'Marca', r.descripcion FROM refacciones r JOIN marcas m WHERE fkIdMarca = IdMarca AND r.nombre like '%{filtro}%'", "Refacciones").Tables[0];
+//            Tabla.Columns.Insert(4, Boton("Eliminar", Color.Red));
+//            Tabla.Columns.Insert(5, Boton("Modificar", Color.Green));
+            Tabla.AutoResizeColumns();
+            Tabla.AutoResizeRows();
+        }
+        public void Borrar(string id, string dato)
+        {
+            DialogResult rs = MessageBox.Show($"¿Estas seguro de borrar {dato}?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                b.Comando($"DELETE FROM Refacciones WHERE codigoBarras = '{id}'");
+                MessageBox.Show("Registro Eliminado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public void Modificar(TextBox CodigoBarras, TextBox Nombre, TextBox Descripcion, int IdMarca)
+        {
+//            MessageBox.Show($"UPDATE refacciones SET nombre = '{Nombre.Text}', descripcion = '{Descripcion.Text}', fkIdMarca = {IdMarca} WHERE codigoBarras = '{CodigoBarras.Text}'", "TEST");
+            b.Comando($"UPDATE refacciones SET nombre = '{Nombre.Text}', descripcion = '{Descripcion.Text}', fkIdMarca = {IdMarca} WHERE codigoBarras = '{CodigoBarras.Text}'");
+            MessageBox.Show("Registro Modificado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         DataGridViewButtonColumn Boton(string t, Color f)
         {
             DataGridViewButtonColumn x = new DataGridViewButtonColumn();
@@ -33,29 +59,6 @@ namespace Manejadores
             x.DefaultCellStyle.ForeColor = Color.White;
             x.DefaultCellStyle.BackColor = f;
             return x;
-        }
-        public void Mostrar(DataGridView Tabla, string filtro)
-        {
-            Tabla.Columns.Clear();
-            Tabla.DataSource = b.Consultar($"SELECT * FROM Refacciones WHERE nombre like '%{filtro}%'", "Refacciones").Tables[0];
-            Tabla.Columns.Insert(4, Boton("Eliminar", Color.Red));
-            Tabla.Columns.Insert(5, Boton("Modificar", Color.Green));
-            Tabla.AutoResizeColumns();
-            Tabla.AutoResizeRows();
-        }
-        public void Borrar(string id, string dato)
-        {
-            DialogResult rs = MessageBox.Show($"¿Estas seguro de borrar {dato}?", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
-            {
-                b.Comando($"DELETE FROM Refacciones WHERE codigoBarras = {id}");
-                MessageBox.Show("Registro Eliminado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        public void Modificar(string id, TextBox CodigoBarras, TextBox Nombre, TextBox Descripcion, TextBox fkIdMrca)
-        {
-            b.Comando($"UPDATE Herramientas SET " + $"codigoBarras='{CodigoBarras.Text}'," + $"nombre='{Nombre.Text}'," + $"descripcion={Descripcion.Text}'," + $"fkIdMarca={fkIdMrca}'," + $"WHERE codigoBarras={id}");
-            MessageBox.Show("Registro Modificado", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
